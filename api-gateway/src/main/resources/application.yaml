@@ -1,0 +1,31 @@
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: power-plant
+          uri: lb://POWER-PLANT
+          predicates:
+            - Path=/power-plant/**
+          filters:
+            - AuthenticationFilter
+
+        - id: battery-service
+          uri: lb://BATTERY-SERVICE
+          predicates:
+            - Path=/battery/**
+          filters:
+            - AuthenticationFilter
+
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+
+  application:
+    name: API-GATEWAY
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
