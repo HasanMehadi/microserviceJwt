@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "13cfd832-51ba-4b24-9f9b-b0df7f5d201f",
+		"name": "mywork",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1559015"
+	},
+	"item": [
+		{
+			"name": "token-creation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mehadi\",\r\n    \"email\": \"Mehadi@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-creation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mehadi\",\r\n    \"email\": \"Mehadi@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "power-plant home",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoiTWVoYWRpQGdtYWlsLmNvbSIsImlhdCI6MTY5Mjc3MDk2NSwiZXhwIjoxNjkyNzcyNzY1fQ.hfZRCWDXw5HTvgwMIrSQPtDWFk4O-T9yU40KXbIXaag",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Cookie",
+						"value": " JSESSIONID=7CE91EE75A65277C0DCB6C5736C5DF5D'",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/power-plant/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"power-plant",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "battery-home",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoiTWVoYWRpQGdtYWlsLmNvbSIsImlhdCI6MTY5Mjg5NjQyNSwiZXhwIjoxNjkyODk4MjI1fQ.uc1l27cS9GqSVlJ4cM15LIg-1gxJQGJ9VhOQ-6WhD6U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/battery/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"battery",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "battery-list-save",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoiTWVoYWRpQGdtYWlsLmNvbSIsImlhdCI6MTY5Mjc4NzA4MCwiZXhwIjoxNjkyNzg4ODgwfQ.LSi6_-NmqQYIwfEZWG7NDg96yPRiJ80nNJpxS_g5_BI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Cannington\",\r\n        \"postcode\": \"6107\",\r\n        \"capacity\": 13500\r\n    },\r\n    {\r\n        \"name\": \"Midland\",\r\n        \"postcode\": \"6057\",\r\n        \"capacity\": 50500\r\n    },\r\n    {\r\n        \"name\": \"Hay Street\",\r\n        \"postcode\": \"6000\",\r\n        \"capacity\": 23500\r\n    },\r\n    {\r\n        \"name\": \"Mount Adams\",\r\n        \"postcode\": \"6525\",\r\n        \"capacity\": 12000\r\n    },\r\n    {\r\n        \"name\": \"Koolan Island\",\r\n        \"postcode\": \"6733\",\r\n        \"capacity\": 10000\r\n    },\r\n    {\r\n        \"name\": \"Armadale\",\r\n        \"postcode\": \"6992\",\r\n        \"capacity\": 25000\r\n    },\r\n    {\r\n        \"name\": \"Lesmurdie\",\r\n        \"postcode\": \"6076\",\r\n        \"capacity\": 13500\r\n    },\r\n    {\r\n        \"name\": \"Kalamunda\",\r\n        \"postcode\": \"6076\",\r\n        \"capacity\": 13500\r\n    },\r\n    {\r\n        \"name\": \"Carmel\",\r\n        \"postcode\": \"6076\",\r\n        \"capacity\": 36000\r\n    },\r\n    {\r\n        \"name\": \"Bentley\",\r\n        \"postcode\": \"6102\",\r\n        \"capacity\": 85000\r\n    },\r\n    {\r\n        \"name\": \"Akunda Bay\",\r\n        \"postcode\": \"2084\",\r\n        \"capacity\": 13500\r\n    },\r\n    {\r\n        \"name\": \"Werrington County\",\r\n        \"postcode\": \"2747\",\r\n        \"capacity\": 13500\r\n    },\r\n    {\r\n        \"name\": \"Bagot\",\r\n        \"postcode\": \"0820\",\r\n        \"capacity\": 27000\r\n    },\r\n    {\r\n        \"name\": \"Yirrkala\",\r\n        \"postcode\": \"0880\",\r\n        \"capacity\": 13500\r\n    },\r\n    {\r\n        \"name\": \"University of Melbourne\",\r\n        \"postcode\": \"3010\",\r\n        \"capacity\": 85000\r\n    },\r\n    {\r\n        \"name\": \"Norfolk Island\",\r\n        \"postcode\": \"2899\",\r\n        \"capacity\": 13500\r\n    },\r\n    {\r\n        \"name\": \"Ootha\",\r\n        \"postcode\": \"2875\",\r\n        \"capacity\": 13500\r\n    },\r\n    {\r\n        \"name\": \"Kent Town\",\r\n        \"postcode\": \"5067\",\r\n        \"capacity\": 13500\r\n    },\r\n    {\r\n        \"name\": \"Northgate Mc\",\r\n        \"postcode\": \"9464\",\r\n        \"capacity\": 13500\r\n    },\r\n    {\r\n        \"name\": \"Gold Coast Mc\",\r\n        \"postcode\": \"9729\",\r\n        \"capacity\": 50000\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/battery/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"battery",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "battery-status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoiTWVoYWRpQGdtYWlsLmNvbSIsImlhdCI6MTY5Mjg5Njc5OCwiZXhwIjoxNjkyODk4NTk4fQ.ACKgNf-eIhoKsLGSHmaNZ6-COUMbc0e-R9Db93LV-0s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/battery/status/6057",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"battery",
+						"status",
+						"6057"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "aggregate-capacity",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoiTWVoYWRpQGdtYWlsLmNvbSIsImlhdCI6MTY5Mjc5NDY0MCwiZXhwIjoxNjkyNzk2NDQwfQ.PwcwKZch15_XivG88T7P-Dgxq38nfUbL7tLrk6IA0MA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/battery/get-aggregate-capacity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"battery",
+						"get-aggregate-capacity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "max-capacity-battery-list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoiTWVoYWRpQGdtYWlsLmNvbSIsImlhdCI6MTY5Mjg1MTM1MiwiZXhwIjoxNjkyODUzMTUyfQ.TWl7nCgiv_JtRWNc3MCmOIr1Wn9fb2Nv9mjRj_8KPvY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/battery/max-capacity-battery-list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"battery",
+						"max-capacity-battery-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "min-capacity-battery-list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoiTWVoYWRpQGdtYWlsLmNvbSIsImlhdCI6MTY5Mjg1MjgzNSwiZXhwIjoxNjkyODU0NjM1fQ.UtGJzzcLAWIisphm-QdqHiyZfD3Rgrypjv6Hssxt-zo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/battery/min-capacity-battery-list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"battery",
+						"min-capacity-battery-list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
