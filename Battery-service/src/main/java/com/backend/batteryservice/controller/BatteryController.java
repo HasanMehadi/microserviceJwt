@@ -76,7 +76,7 @@ public class BatteryController {
         return service.getMinimumCapacityBatteryList();
     }
 
-    @GetMapping("/status/{capacity}")
+    @GetMapping("/status/capacity/{capacity}")
     public ResponseEntity<?> getThresholdBattery(@PathVariable Integer capacity) {
 
         if(bucket.tryConsume(1))

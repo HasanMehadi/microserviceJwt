@@ -13,6 +13,6 @@ public class BatteryServiceClient {
     private RestTemplate template;
 
     public BatteryDto fetchBatteryStatus(String batteryId) {
-        return template.getForObject("http://RESTAURANT-SERVICE/restaurant/orders/status/" + batteryId, BatteryDto.class);
+        return template.getForObject("http://BATTERY-SERVICE/battery/status" + batteryId, BatteryDto.class);
     }
 }
